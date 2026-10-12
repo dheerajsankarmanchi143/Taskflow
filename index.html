@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow helps you organize tasks and stay productive.">
+  <title>TaskFlow — Make Every Day Count</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="TaskFlow home"><span class="brand-mark">✓</span><span>TaskFlow<span class="period">.</span></span></a>
+      <button id="theme-toggle" class="theme-toggle" type="button"><span id="theme-icon">☾</span><span id="theme-label">Dark mode</span></button>
+    </header>
+    <main>
+      <section class="welcome">
+        <div><p class="eyebrow">YOUR PERSONAL WORKSPACE</p><h1>Make room for<br><span>what matters.</span></h1><p class="welcome-copy">A calmer way to plan your day, one task at a time.</p></div>
+        <div class="today-pill"><span class="status-dot"></span><span id="today-label">YOUR DAY</span></div>
+      </section>
+      <section class="stats-grid" aria-label="Task statistics">
+        <article class="stat-card"><div class="stat-topline"><span class="stat-name">All tasks</span><span class="stat-icon">▤</span></div><div class="stat-value" id="stat-total">0</div><p class="stat-foot">Everything on your list</p></article>
+        <article class="stat-card"><div class="stat-topline"><span class="stat-name">In progress</span><span class="stat-icon">◷</span></div><div class="stat-value" id="stat-active">0</div><p class="stat-foot">One step at a time</p></article>
+        <article class="stat-card"><div class="stat-topline"><span class="stat-name">Completed</span><span class="stat-icon">✓</span></div><div class="stat-value" id="stat-completed">0</div><p class="stat-foot">Progress worth celebrating</p></article>
+      </section>
+      <section class="workspace">
+        <div class="section-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>Tasks</h2></div><p class="task-counter" id="task-counter">0 tasks</p></div>
+        <form id="task-form" class="task-form"><label class="sr-only" for="task-input">New task</label><span class="input-icon">＋</span><input id="task-input" type="text" placeholder="What would you like to get done?" maxlength="200" autocomplete="off" required><button type="submit" id="submit-btn" class="add-btn">Add task <span>↗</span></button></form>
+        <nav class="filters" aria-label="Filter tasks">
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All tasks <span id="count-all" class="filter-count">0</span></button>
+          <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">In progress <span id="count-active" class="filter-count">0</span></button>
+          <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">Completed <span id="count-completed" class="filter-count">0</span></button>
+        </nav>
+        <ul id="task-list" class="task-list"></ul>
+        <div id="empty-state" class="empty-state"><div class="empty-art">✓</div><h3 id="empty-title">A fresh start.</h3><p id="empty-message">Add your first task above and turn your plans into progress.</p></div>
+      </section>
+    </main>
+    <footer class="footer"><span>Designed for focus. Built for progress.</span><span>TaskFlow <span class="period">●</span></span></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
